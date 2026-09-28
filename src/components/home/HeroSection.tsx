@@ -40,7 +40,7 @@ export function HeroSection() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl text-left space-y-6">
+        <div className="max-w-4xl text-left space-y-6">
           {/* Status Badges */}
           <div className="flex flex-wrap items-center justify-start gap-2">
             <PrizmBadge variant="accent" showPip>
@@ -54,20 +54,15 @@ export function HeroSection() {
             </PrizmBadge>
           </div>
 
-          {/* Main Title */}
-          <h1 className="text-balance text-3xl font-bold tracking-tight text-fg sm:text-5xl lg:text-6xl text-left">
-            Shifting Defence Software from{" "}
-            <span className="text-fg-muted font-medium">
-              Deterministic Specs
-            </span>{" "}
-            to{" "}
-            <span className="text-accent bg-clip-text">
-              Continuous Outcome Delivery
-            </span>
+          {/* Main Title - Structured into exactly 3 lines */}
+          <h1 className="text-3xl font-bold tracking-tight text-fg sm:text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.14] text-left">
+            <span className="block">Shifting Defence Software</span>
+            <span className="block text-fg-muted font-medium">from Deterministic Specs</span>
+            <span className="block text-accent">to Continuous Outcome Delivery</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-balance text-base text-fg-muted sm:text-lg leading-relaxed text-left">
+          <p className="max-w-2xl text-base text-fg-muted sm:text-lg leading-relaxed text-left">
             The deterministic model built for weapons platforms creates friction when applied to digital systems.
             MPO establishes a disciplined, adaptive product model across MINDEF/SAF—driving problem-first discovery, rapid AI prototyping, and continuous pipeline assurance.
           </p>
