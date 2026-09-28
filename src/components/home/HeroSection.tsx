@@ -57,7 +57,7 @@ export function HeroSection() {
           {/* Main Title */}
           <h1 className="text-balance text-3xl font-bold tracking-tight text-fg sm:text-5xl lg:text-6xl text-left">
             Shifting Defence Software from{" "}
-            <span className="text-fg-muted font-normal underline decoration-danger/40 decoration-wavy">
+            <span className="text-fg-muted font-medium">
               Deterministic Specs
             </span>{" "}
             to{" "}
