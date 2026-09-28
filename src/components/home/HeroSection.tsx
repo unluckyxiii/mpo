@@ -47,10 +47,10 @@ export function HeroSection() {
               MINDEF Transformation Task Force
             </PrizmBadge>
             <PrizmBadge variant="muted">
-              Functional Authority for Product Practice
+              Build & Reform Together
             </PrizmBadge>
             <PrizmBadge variant="success">
-              AI-First Operating Model
+              Adaptive Product Model
             </PrizmBadge>
           </div>
 
