@@ -11,7 +11,7 @@ export function PodBlueprint() {
     },
     {
       title: "Product Lead",
-      source: "MPO Functional Cadre (DX11–DX15)",
+      source: "MPO Functional Cadre (DX11-DX15)",
       description: "Single-threaded owner of product strategy, assumption testing, roadmap prioritization, and outcome metrics (VCR).",
       badge: "MPO Core"
     },
@@ -30,7 +30,7 @@ export function PodBlueprint() {
     {
       title: "Domain Apprentices (Full-Time)",
       source: "Embedded Officers from Services & DTC",
-      description: "Full-time 12–24 month rotation learning modern product practice on live systems to seed capability back to parent units.",
+      description: "Full-time 12-24 month rotation learning modern product practice on live systems to seed capability back to parent units.",
       badge: "Apprentice Cadre"
     },
     {

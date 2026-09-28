@@ -63,7 +63,7 @@ export function CommandMenu() {
         tool.description.toLowerCase().includes(q)
       ) {
         results.push({
-          title: `${tool.name} — ${tool.tagline}`,
+          title: `${tool.name} - ${tool.tagline}`,
           category: "Spectrum Tools",
           url: `/platform-tools#${tool.id}`,
           description: tool.description,

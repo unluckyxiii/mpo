@@ -30,7 +30,7 @@ export default function VisionDoctrinePage() {
           </h1>
 
           <p className="text-base sm:text-lg text-fg-muted leading-relaxed">
-            MINDEF/SAF has world-class engineering machinery built for deterministic systems—weapons platforms and hardware networks where requirements are predictable from the start. Applied to digital systems, this model creates persistent friction.
+            MINDEF/SAF has world-class engineering machinery built for deterministic systems, such as weapons platforms and hardware networks where requirements are predictable from the start. Applied to digital systems, this model creates persistent friction.
           </p>
         </div>
       </section>

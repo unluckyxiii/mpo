@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MINDEF Product Office (MPO) — Disciplined Adaptive Software in Defence",
+  title: "MINDEF Product Office (MPO) - Disciplined Adaptive Software in Defence",
   description:
     "MPO drives systemic digital transformation across MINDEF/SAF and the Defence Technology Community, establishing an AI-first, disciplined adaptive product operating model.",
 };

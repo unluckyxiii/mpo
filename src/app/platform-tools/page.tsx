@@ -55,7 +55,7 @@ export default function PlatformToolsPage() {
             Spectrum: AI at Every Step of the Lifecycle
           </h2>
           <p className="text-xs sm:text-sm text-fg-muted">
-            The tools below are ordered the way the product practice runs—from discovering the ground problem to proving it worked.
+            The tools below are ordered the way the product practice runs, from discovering the ground problem to proving it worked.
           </p>
         </div>
 

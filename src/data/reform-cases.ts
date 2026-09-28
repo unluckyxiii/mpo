@@ -32,7 +32,7 @@ export const reformCasesList: ReformCase[] = [
     title: "Dual-Reporting Product Apprenticeship for Domain Officers",
     category: "Policy Waiver",
     blockingRule: "SAF officers could only be posted to established military billet appointments, preventing direct embedding in agile civilian development squads.",
-    trialDesign: "Trialed a supernumerary apprenticeship model where military officers serve full-time in MPO product squads for 12–24 months with dual reporting lines.",
+    trialDesign: "Trialed a supernumerary apprenticeship model where military officers serve full-time in MPO product squads for 12-24 months with dual reporting lines.",
     liveEvidence: "8 military apprentices successfully completed Phase 1, taking production-tested agile practices back to Army, RSAF, and DIS capability branches.",
     standingRuleOutcome: "Integrated into the official Product RTS Career Development framework."
   }
@@ -53,7 +53,7 @@ export const phaseRoadmapSteps: PhaseRoadmapStep[] = [
   {
     phaseNumber: 1,
     phaseName: "Doing, Demonstrating, and Apprenticing",
-    duration: "Years 1–2",
+    duration: "Years 1-2",
     tagline: "Proving the Model on Real Problems",
     objective: "Deploy MPO product squads into pioneer domains (HR, OneNS, Safety, Logistics) to deliver working products, trial policy waivers on live systems, and train embedded military/civilian apprentices.",
     keyMilestones: [
@@ -68,7 +68,7 @@ export const phaseRoadmapSteps: PhaseRoadmapStep[] = [
   {
     phaseNumber: 2,
     phaseName: "Capability Transfer and Institutional Codification",
-    duration: "Years 2–3",
+    duration: "Years 2-3",
     tagline: "Transferring Squads & Codifying Standing Policy",
     objective: "Transfer mature product squads into domains that meet readiness criteria, codify tested policy exceptions into standing regulations, and launch the formal Product RTS framework.",
     keyMilestones: [

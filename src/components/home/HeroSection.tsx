@@ -64,7 +64,7 @@ export function HeroSection() {
           {/* Subtitle */}
           <p className="max-w-2xl text-base text-fg-muted sm:text-lg leading-relaxed text-left">
             The deterministic model built for weapons platforms creates friction when applied to digital systems.
-            MPO establishes a disciplined, adaptive product model across MINDEF/SAF—driving problem-first discovery, rapid AI prototyping, and continuous pipeline assurance.
+            MPO establishes a disciplined, adaptive product model across MINDEF/SAF, driving problem-first discovery, rapid AI prototyping, and continuous pipeline assurance.
           </p>
 
           {/* Action CTAs */}
