@@ -40,9 +40,9 @@ export function HeroSection() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center space-y-6">
+        <div className="max-w-3xl text-left space-y-6">
           {/* Status Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-2">
+          <div className="flex flex-wrap items-center justify-start gap-2">
             <PrizmBadge variant="accent" showPip>
               MINDEF Transformation Task Force
             </PrizmBadge>
@@ -55,7 +55,7 @@ export function HeroSection() {
           </div>
 
           {/* Main Title */}
-          <h1 className="text-balance text-3xl font-bold tracking-tight text-fg sm:text-5xl lg:text-6xl">
+          <h1 className="text-balance text-3xl font-bold tracking-tight text-fg sm:text-5xl lg:text-6xl text-left">
             Shifting Defence Software from{" "}
             <span className="text-fg-muted font-normal underline decoration-danger/40 decoration-wavy">
               Deterministic Specs
@@ -67,13 +67,13 @@ export function HeroSection() {
           </h1>
 
           {/* Subtitle */}
-          <p className="mx-auto max-w-2xl text-balance text-base text-fg-muted sm:text-lg leading-relaxed">
+          <p className="text-balance text-base text-fg-muted sm:text-lg leading-relaxed text-left">
             The deterministic model built for weapons platforms creates friction when applied to digital systems.
             MPO establishes a disciplined, adaptive product model across MINDEF/SAF—driving problem-first discovery, rapid AI prototyping, and continuous pipeline assurance.
           </p>
 
           {/* Action CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <div className="flex flex-wrap items-center justify-start gap-3 pt-2">
             <Link
               href="/structure-accountability"
               className="inline-flex h-11 items-center gap-2 rounded-md bg-accent px-5 text-sm font-semibold text-accent-fg shadow-md transition-all hover:bg-accent-hover hover:shadow-lg focus-visible:outline-2 focus-visible:outline-accent"

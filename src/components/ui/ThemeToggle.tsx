@@ -10,9 +10,7 @@ export function ThemeToggle() {
   useEffect(() => {
     setMounted(true);
     const savedMode = localStorage.getItem("prizm.mode") as "light" | "dark" | null;
-    const initialMode =
-      savedMode ||
-      (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const initialMode = savedMode || "light";
     
     setMode(initialMode);
     document.documentElement.dataset.mode = initialMode;

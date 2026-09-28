@@ -123,15 +123,15 @@ export default function VisionDoctrinePage() {
       <DimensionsComparison />
 
       {/* Action CTA */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-        <div className="rounded-2xl border border-border bg-surface p-8 sm:p-12 space-y-4 max-w-3xl mx-auto shadow-xs">
-          <h3 className="text-2xl font-bold text-fg">
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-left">
+        <div className="rounded-2xl border border-border bg-surface p-8 sm:p-12 space-y-4 max-w-3xl shadow-xs">
+          <h3 className="text-2xl font-bold text-fg text-left">
             See How We Structure Teams & Accountability
           </h3>
-          <p className="text-xs sm:text-sm text-fg-muted leading-relaxed">
+          <p className="text-xs sm:text-sm text-fg-muted leading-relaxed text-left">
             Discover the 4-tier AI competency schema, co-located squad topologies, and lifecycle RACI matrices governing MPO squads.
           </p>
-          <div className="pt-2">
+          <div className="pt-2 flex justify-start">
             <Link
               href="/structure-accountability"
               className="inline-flex h-10 items-center gap-2 rounded-md bg-accent px-5 text-xs font-semibold text-accent-fg shadow-sm hover:bg-accent-hover"

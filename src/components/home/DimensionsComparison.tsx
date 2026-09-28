@@ -14,20 +14,20 @@ export function DimensionsComparison() {
   return (
     <section className="py-16 sm:py-24 bg-bg border-b border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+        <div className="text-left max-w-3xl mb-10 space-y-3">
           <PrizmBadge variant="accent" showPip>
             Systemic Reform Blueprint
           </PrizmBadge>
-          <h2 className="text-3xl font-bold tracking-tight text-fg sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-fg sm:text-4xl text-left">
             5 Dimensions of Change: Deterministic vs. Adaptive
           </h2>
-          <p className="text-sm sm:text-base text-fg-muted">
+          <p className="text-sm sm:text-base text-fg-muted text-left">
             Adopting agile rituals within a deterministic system changes ceremonies, not outcomes. Real transformation requires aligning incentives across five institutional dimensions:
           </p>
         </div>
 
         {/* Tab Selection */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
+        <div className="flex flex-wrap justify-start gap-2 mb-8">
           {dimensionsData.map((d) => {
             const isActive = d.id === activeTab;
             return (

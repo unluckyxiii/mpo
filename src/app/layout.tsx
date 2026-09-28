@@ -41,10 +41,7 @@ export default function RootLayout({
             __html: `
               (function() {
                 try {
-                  var mode = localStorage.getItem('prizm.mode');
-                  if (!mode) {
-                    mode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                  }
+                  var mode = localStorage.getItem('prizm.mode') || 'light';
                   document.documentElement.dataset.zone = 'enterprise';
                   document.documentElement.dataset.mode = mode;
                   document.documentElement.style.colorScheme = mode;

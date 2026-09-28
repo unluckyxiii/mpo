@@ -18,14 +18,14 @@ export default function HomePage() {
       {/* Audience Gateways Strip */}
       <section className="py-16 bg-surface border-b border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
+          <div className="text-left max-w-2xl mb-10 space-y-2">
             <PrizmBadge variant="muted">
               Find Your Starting Point
             </PrizmBadge>
-            <h2 className="text-2xl font-bold text-fg sm:text-3xl">
+            <h2 className="text-2xl font-bold text-fg sm:text-3xl text-left">
               Tailored Guidance by Functional Role
             </h2>
-            <p className="text-xs sm:text-sm text-fg-muted">
+            <p className="text-xs sm:text-sm text-fg-muted text-left">
               Explore how MPO supports leadership, operational problem owners, and technical delivery teams.
             </p>
           </div>
@@ -116,37 +116,39 @@ export default function HomePage() {
       <SpectrumGrid />
 
       {/* Bottom Transformation CTA */}
-      <section className="py-16 sm:py-20 bg-bg text-center">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
-            <Sparkles className="h-3.5 w-3.5" />
-            <span>Ready to Shift Practice?</span>
-          </div>
+      <section className="py-16 sm:py-20 bg-bg text-left border-t border-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl space-y-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
+              <Sparkles className="h-3.5 w-3.5" />
+              <span>Ready to Shift Practice?</span>
+            </div>
 
-          <h2 className="text-3xl font-bold tracking-tight text-fg sm:text-4xl">
-            Have an Operational Friction or Policy Blocker to Discuss?
-          </h2>
+            <h2 className="text-3xl font-bold tracking-tight text-fg sm:text-4xl text-left">
+              Have an Operational Friction or Policy Blocker to Discuss?
+            </h2>
 
-          <p className="text-sm text-fg-muted max-w-xl mx-auto leading-relaxed">
-            Share the problem and frontline users affected. MPO can help clarify the need, run a rapid discovery sprint, or design a policy trial waiver.
-          </p>
+            <p className="text-sm text-fg-muted max-w-xl leading-relaxed text-left">
+              Share the problem and frontline users affected. MPO can help clarify the need, run a rapid discovery sprint, or design a policy trial waiver.
+            </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-            <Link
-              href="/funding-support"
-              className="inline-flex h-11 items-center gap-2 rounded-md bg-accent px-6 text-sm font-semibold text-accent-fg shadow-md transition-all hover:bg-accent-hover"
-            >
-              <span>Submit a 6W Problem Brief</span>
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+            <div className="flex flex-wrap items-center justify-start gap-3 pt-2">
+              <Link
+                href="/funding-support"
+                className="inline-flex h-11 items-center gap-2 rounded-md bg-accent px-6 text-sm font-semibold text-accent-fg shadow-md transition-all hover:bg-accent-hover"
+              >
+                <span>Submit a 6W Problem Brief</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
 
-            <Link
-              href="/glossary"
-              className="inline-flex h-11 items-center gap-2 rounded-md border border-border bg-surface px-5 text-sm font-medium text-fg hover:bg-bg-muted"
-            >
-              <HelpCircle className="h-4 w-4 text-accent" />
-              <span>Browse MINDEF Glossary</span>
-            </Link>
+              <Link
+                href="/glossary"
+                className="inline-flex h-11 items-center gap-2 rounded-md border border-border bg-surface px-5 text-sm font-medium text-fg hover:bg-bg-muted"
+              >
+                <HelpCircle className="h-4 w-4 text-accent" />
+                <span>Browse MINDEF Glossary</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
