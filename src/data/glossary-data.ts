@@ -13,9 +13,9 @@ export const glossaryDictionary: GlossaryItem[] = [
     id: "mpo",
     term: "MPO",
     fullName: "MINDEF Product Office",
-    definition: "A dedicated transformation task force reporting directly to PS(D) to drive the shift from deterministic capability acquisition to a disciplined adaptive product model across MINDEF/SAF and the Defence Technology Community.",
+    definition: "A dedicated transformation task force mandated across MINDEF/SAF and the Defence Technology Community to drive the shift from deterministic capability acquisition to a disciplined adaptive product model.",
     category: "organization",
-    relatedTerms: ["PS(D)", "DSTA", "DTC", "RTS"]
+    relatedTerms: ["DSTA", "DTC", "RTS"]
   },
   {
     id: "psd",

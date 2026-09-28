@@ -14,7 +14,7 @@ export function Footer() {
               <span>Product Office</span>
             </div>
             <p className="text-xs text-fg-muted max-w-sm leading-relaxed">
-              MPO is a dedicated transformation task force reporting directly to PS(D) to establish a disciplined, adaptive product operating model across MINDEF/SAF.
+              MPO is a dedicated transformation office partnering across MINDEF/SAF and the Defence Tech Community to establish a disciplined, adaptive software delivery model.
             </p>
             <div className="text-[11px] text-fg-subtle">
               Engineered with <span className="font-semibold text-fg">PRIZM 4.0 Enterprise</span>.
@@ -27,7 +27,7 @@ export function Footer() {
             <ul className="space-y-2 text-xs">
               <li><Link href="/vision-doctrine" className="hover:text-fg transition-colors">Vision & Doctrine</Link></li>
               <li><Link href="/structure-accountability" className="hover:text-fg transition-colors">Structure & Accountability</Link></li>
-              <li><Link href="/transformation-hub" className="hover:text-fg transition-colors">Transformation Hub</Link></li>
+              <li><Link href="/transformation-hub" className="hover:text-fg transition-colors">Transformation</Link></li>
               <li><Link href="/structure-accountability#competency-matrix" className="hover:text-fg transition-colors">4-Tier AI Matrix</Link></li>
               <li><Link href="/structure-accountability#raci-matrix" className="hover:text-fg transition-colors">Lifecycle RACI</Link></li>
             </ul>
@@ -37,8 +37,8 @@ export function Footer() {
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-wider text-fg mb-3">Practice & Tools</h3>
             <ul className="space-y-2 text-xs">
-              <li><Link href="/product-development" className="hover:text-fg transition-colors">Defence Playbook</Link></li>
-              <li><Link href="/platform-tools" className="hover:text-fg transition-colors">Spectrum Ecosystem</Link></li>
+              <li><Link href="/product-development" className="hover:text-fg transition-colors">Practice Playbook</Link></li>
+              <li><Link href="/platform-tools" className="hover:text-fg transition-colors">Tools Ecosystem</Link></li>
               <li><Link href="/products" className="hover:text-fg transition-colors">Products & Scorecards</Link></li>
               <li><Link href="/glossary" className="hover:text-fg transition-colors">Glossary & Acronyms</Link></li>
               <li><Link href="/funding-support" className="hover:text-fg transition-colors">6W Brief Intake</Link></li>
@@ -61,15 +61,9 @@ export function Footer() {
           <div>
             &copy; {new Date().getFullYear()} MINDEF Product Office. All rights reserved.
           </div>
-          <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-success" />
-              PRIZM Enterprise v4.0 Active
-            </span>
-            <div className="flex items-center gap-2 pl-3 border-l border-border">
-              <AuthStatusButton />
-              <ThemeToggle />
-            </div>
+          <div className="flex items-center gap-2">
+            <AuthStatusButton />
+            <ThemeToggle />
           </div>
         </div>
       </div>

@@ -47,10 +47,10 @@ export function HeroSection() {
               MINDEF Transformation Task Force
             </PrizmBadge>
             <PrizmBadge variant="muted">
-              Reporting to PS(D)
+              Whole-of-Defence Mandate
             </PrizmBadge>
             <PrizmBadge variant="success">
-              PRIZM 4.0 & AI-First Operating Model
+              AI-First Operating Model
             </PrizmBadge>
           </div>
 
