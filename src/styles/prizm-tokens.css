@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   PRIZM 4.0 Design System Tokens (OKLCH Color Space)
+   Enterprise Zone & Dark/Light Mode Theme Primitives
+   ========================================================================== */
+
+:root {
+  --radius: 0.5rem;
+}
+
+/* Light Mode (Enterprise Zone) */
+:root,
+[data-mode="light"],
+[data-zone="enterprise"][data-mode="light"] {
+  --color-bg: oklch(98.5% 0.002 247.8);
+  --color-bg-subtle: oklch(96.5% 0.005 247.8);
+  --color-bg-muted: oklch(93.5% 0.008 247.8);
+  
+  --color-surface: oklch(100% 0 0);
+  --color-surface-hover: oklch(97% 0.004 247.8);
+
+  --color-fg: oklch(21% 0.02 260);
+  --color-fg-muted: oklch(46% 0.02 260);
+  --color-fg-subtle: oklch(62% 0.015 260);
+
+  --color-border: oklch(89% 0.01 260);
+  --color-border-subtle: oklch(93% 0.006 260);
+  --color-border-strong: oklch(78% 0.02 260);
+
+  --color-accent: oklch(51% 0.23 264);       /* Deep vibrant PRIZM blue */
+  --color-accent-hover: oklch(45% 0.24 264);
+  --color-accent-fg: oklch(100% 0 0);
+  --color-accent-muted: oklch(94% 0.04 264);
+
+  --color-success: oklch(62% 0.19 145);
+  --color-success-fg: oklch(100% 0 0);
+  
+  --color-warning: oklch(72% 0.18 75);
+  --color-warning-fg: oklch(20% 0.05 75);
+  
+  --color-danger: oklch(58% 0.22 25);
+  --color-danger-fg: oklch(100% 0 0);
+
+  --color-info: oklch(60% 0.16 230);
+  --color-info-fg: oklch(100% 0 0);
+}
+
+/* Dark Mode (Enterprise Zone & C3 Compatibility) */
+[data-mode="dark"],
+[data-zone="enterprise"][data-mode="dark"],
+[data-zone="c3"] {
+  --color-bg: oklch(16% 0.015 260);
+  --color-bg-subtle: oklch(20% 0.018 260);
+  --color-bg-muted: oklch(24% 0.02 260);
+
+  --color-surface: oklch(19% 0.016 260);
+  --color-surface-hover: oklch(23% 0.02 260);
+
+  --color-fg: oklch(96% 0.005 260);
+  --color-fg-muted: oklch(74% 0.015 260);
+  --color-fg-subtle: oklch(55% 0.015 260);
+
+  --color-border: oklch(28% 0.02 260);
+  --color-border-subtle: oklch(22% 0.015 260);
+  --color-border-strong: oklch(38% 0.025 260);
+
+  --color-accent: oklch(64% 0.22 260);
+  --color-accent-hover: oklch(70% 0.21 260);
+  --color-accent-fg: oklch(100% 0 0);
+  --color-accent-muted: oklch(25% 0.08 260);
+
+  --color-success: oklch(72% 0.20 145);
+  --color-success-fg: oklch(15% 0.05 145);
+
+  --color-warning: oklch(78% 0.17 75);
+  --color-warning-fg: oklch(18% 0.05 75);
+
+  --color-danger: oklch(68% 0.21 25);
+  --color-danger-fg: oklch(100% 0 0);
+
+  --color-info: oklch(70% 0.16 230);
+  --color-info-fg: oklch(15% 0.05 230);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* PRIZM Hero Pattern & Signature Edges */
+.prizm-hero-edge-1 {
+  background: linear-gradient(90deg, transparent 0%, var(--color-accent) 50%, transparent 100%);
+  box-shadow: 0 0 24px var(--color-accent), 0 0 48px var(--color-accent);
+  opacity: 0.35;
+}
+.prizm-hero-edge-2 {
+  background: linear-gradient(180deg, transparent 0%, var(--color-accent) 50%, transparent 100%);
+  box-shadow: 0 0 24px var(--color-accent), 0 0 48px var(--color-accent);
+  opacity: 0.35;
+}
+.prizm-hero-edge-3 {
+  background: linear-gradient(90deg, transparent 0%, var(--color-accent) 50%, transparent 100%);
+  box-shadow: 0 0 24px var(--color-accent), 0 0 48px var(--color-accent);
+  opacity: 0.35;
+}
+.prizm-hero-edge-4 {
+  background: linear-gradient(180deg, transparent 0%, var(--color-accent) 50%, transparent 100%);
+  box-shadow: 0 0 24px var(--color-accent), 0 0 48px var(--color-accent);
+  opacity: 0.35;
+}
+
+/* PRIZM Glow Utilities */
+.prizm-glow {
+  box-shadow: 0 0 20px -5px var(--color-accent);
+}
