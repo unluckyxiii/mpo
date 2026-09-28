@@ -69,11 +69,15 @@ export function Header() {
           })}
         </nav>
 
-        {/* Right Actions: Search + Auth + Theme Toggle + Mobile Menu Trigger */}
+        {/* Right Actions: Search + Mobile Menu Trigger */}
         <div className="flex items-center gap-2">
           <CommandMenu />
-          <AuthStatusButton />
-          <ThemeToggle />
+          
+          {/* Desktop utility shortcuts */}
+          <div className="hidden xl:flex items-center gap-2 pl-2 border-l border-border">
+            <AuthStatusButton />
+            <ThemeToggle />
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -111,6 +115,17 @@ export function Header() {
               );
             })}
           </nav>
+
+          {/* Bottom of the Main Menu: Login Button & Theme Switch */}
+          <div className="mt-4 pt-4 border-t border-border flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <AuthStatusButton />
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-fg-subtle">Theme</span>
+              <ThemeToggle />
+            </div>
+          </div>
         </div>
       )}
     </header>

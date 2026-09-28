@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { AuthStatusButton } from "@/components/auth/AuthStatusButton";
 
 export function Footer() {
   return (
@@ -59,11 +61,15 @@ export function Footer() {
           <div>
             &copy; {new Date().getFullYear()} MINDEF Product Office. All rights reserved.
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <span className="inline-flex items-center gap-1.5">
               <span className="h-1.5 w-1.5 rounded-full bg-success" />
               PRIZM Enterprise v4.0 Active
             </span>
+            <div className="flex items-center gap-2 pl-3 border-l border-border">
+              <AuthStatusButton />
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </div>
