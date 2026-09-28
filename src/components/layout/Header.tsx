@@ -116,15 +116,10 @@ export function Header() {
             })}
           </nav>
 
-          {/* Bottom of the Main Menu: Login Button & Theme Switch */}
-          <div className="mt-4 pt-4 border-t border-border flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <AuthStatusButton />
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-fg-subtle">Theme</span>
-              <ThemeToggle />
-            </div>
+          {/* Bottom of the Main Menu: Login Button & Theme Switch together */}
+          <div className="mt-4 pt-4 border-t border-border flex items-center gap-3 justify-start">
+            <AuthStatusButton />
+            <ThemeToggle />
           </div>
         </div>
       )}

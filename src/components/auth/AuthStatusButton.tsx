@@ -28,19 +28,19 @@ export function AuthStatusButton() {
 
   if (authenticated) {
     return (
-      <div className="flex items-center gap-1">
-        <span className="hidden sm:inline-flex items-center gap-1 rounded-full border border-success/30 bg-success/10 px-2 py-0.5 font-mono text-[10px] font-semibold text-success">
+      <div className="flex items-center gap-1.5">
+        <span className="inline-flex items-center gap-1 rounded-full border border-success/30 bg-success/10 px-2.5 py-1 text-xs font-medium text-success">
           <span className="h-1.5 w-1.5 rounded-full bg-success shrink-0" />
-          Enclave Active
+          Logged In
         </span>
         <button
           type="button"
           onClick={handleLogout}
-          title="Sign out of enclave session"
-          className="inline-flex h-8 items-center gap-1 rounded-md border border-border bg-bg-subtle px-2 text-[11px] font-medium text-fg-muted hover:bg-bg-muted hover:text-fg transition-colors"
+          title="Sign out"
+          className="inline-flex h-8 items-center gap-1 rounded-md border border-border bg-bg-subtle px-2.5 text-xs font-medium text-fg-muted hover:bg-bg-muted hover:text-fg transition-colors"
         >
           <LogOut className="h-3 w-3" />
-          <span className="hidden sm:inline">Logout</span>
+          <span>Log Out</span>
         </button>
       </div>
     );
@@ -49,11 +49,11 @@ export function AuthStatusButton() {
   return (
     <Link
       href="/login"
-      title="Unlock internal tools & brief intake"
-      className="inline-flex h-8 items-center gap-1 rounded-md border border-border bg-bg-subtle px-2.5 text-[11px] font-semibold text-fg-muted hover:border-accent hover:bg-surface hover:text-accent transition-colors"
+      title="Log In to access problem brief intake"
+      className="inline-flex h-8 items-center gap-1.5 rounded-md border border-border bg-bg-subtle px-3 text-xs font-semibold text-fg-muted hover:border-accent hover:bg-surface hover:text-accent transition-colors"
     >
-      <Lock className="h-3 w-3" />
-      <span className="hidden sm:inline">Enclave Login</span>
+      <Lock className="h-3.5 w-3.5" />
+      <span>Log In</span>
     </Link>
   );
 }

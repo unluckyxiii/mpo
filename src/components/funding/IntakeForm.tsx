@@ -90,14 +90,14 @@ export function IntakeForm() {
         <div className="space-y-2 text-left">
           <div className="flex items-center gap-2">
             <PrizmBadge variant="accent" showPip>
-              Enclave Authentication Required
+              Passcode Required
             </PrizmBadge>
           </div>
           <h3 className="text-xl font-bold text-fg">
-            Unlock 6W Problem Brief Intake
+            Log In to Submit a 6W Problem Brief
           </h3>
           <p className="text-xs text-fg-muted leading-relaxed">
-            Software briefs contain sensitive operational workflows and unit readiness descriptions. Please enter the designated access passcode to unlock the intake form:
+            Software briefs contain operational workflows and unit readiness descriptions. Please enter the access passcode to unlock the intake form:
           </p>
         </div>
 

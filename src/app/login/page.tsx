@@ -46,14 +46,14 @@ function LoginFormContent() {
       <div className="space-y-2 text-left">
         <div className="flex items-center gap-2">
           <PrizmBadge variant="accent" showPip>
-            Internal Enclave Access
+            Portal Access
           </PrizmBadge>
         </div>
         <h1 className="text-2xl font-bold text-fg">
-          MINDEF Portal Authentication
+          MINDEF Portal Login
         </h1>
         <p className="text-xs text-fg-muted leading-relaxed">
-          Enter the designated access passcode to access gated problem intake, live report cards, and internal policy waiver logs.
+          Enter the access passcode to unlock problem brief submissions, live report cards, and internal policy waiver logs.
         </p>
       </div>
 
@@ -88,7 +88,7 @@ function LoginFormContent() {
           disabled={loading}
           className="w-full inline-flex h-10 items-center justify-center gap-2 rounded-md bg-accent px-4 text-xs font-semibold text-accent-fg shadow-sm hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-accent disabled:opacity-50 transition-all"
         >
-          <span>{loading ? "Verifying Passcode..." : "Authenticate & Continue"}</span>
+          <span>{loading ? "Verifying..." : "Log In"}</span>
           <ArrowRight className="h-3.5 w-3.5" />
         </button>
       </form>
