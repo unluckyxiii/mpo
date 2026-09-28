@@ -1,12 +1,50 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { PrizmBadge } from "@/components/ui/PrizmBadge";
-import { CheckCircle2, Send, Sparkles, HelpCircle, FileCheck } from "lucide-react";
+import { CheckCircle2, Send, Sparkles, HelpCircle, FileCheck, Lock, Key, ArrowRight, ShieldCheck } from "lucide-react";
+import Link from "next/link";
 
 export function IntakeForm() {
+  const [authenticated, setAuthenticated] = useState<boolean | null>(null);
+  const [passcode, setPasscode] = useState("");
+  const [passcodeError, setPasscodeError] = useState("");
+  const [unlocking, setUnlocking] = useState(false);
+
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/auth/status")
+      .then((res) => res.json())
+      .then((data) => setAuthenticated(data.authenticated))
+      .catch(() => setAuthenticated(false));
+  }, []);
+
+  const handleUnlock = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setPasscodeError("");
+    setUnlocking(true);
+
+    try {
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ passcode }),
+      });
+
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setAuthenticated(true);
+      } else {
+        setPasscodeError(data.error || "Incorrect passcode.");
+      }
+    } catch {
+      setPasscodeError("Verification error. Please try again.");
+    } finally {
+      setUnlocking(false);
+    }
+  };
 
   const [formData, setFormData] = useState({
     projectName: "",
@@ -45,6 +83,60 @@ export function IntakeForm() {
       setLoading(false);
     }
   };
+
+  if (authenticated === false) {
+    return (
+      <div id="intake-form" className="rounded-2xl border border-border bg-surface p-6 sm:p-10 shadow-sm space-y-6 max-w-xl">
+        <div className="space-y-2 text-left">
+          <div className="flex items-center gap-2">
+            <PrizmBadge variant="accent" showPip>
+              Enclave Authentication Required
+            </PrizmBadge>
+          </div>
+          <h3 className="text-xl font-bold text-fg">
+            Unlock 6W Problem Brief Intake
+          </h3>
+          <p className="text-xs text-fg-muted leading-relaxed">
+            Software briefs contain sensitive operational workflows and unit readiness descriptions. Please enter the designated access passcode to unlock the intake form:
+          </p>
+        </div>
+
+        <form onSubmit={handleUnlock} className="space-y-4">
+          {passcodeError && (
+            <div className="rounded-lg border border-danger/30 bg-danger/10 p-3 text-xs text-danger">
+              {passcodeError}
+            </div>
+          )}
+
+          <div className="space-y-1.5 text-left">
+            <label className="block text-xs font-semibold text-fg">
+              Access Passcode
+            </label>
+            <div className="relative">
+              <input
+                type="password"
+                required
+                value={passcode}
+                onChange={(e) => setPasscode(e.target.value)}
+                placeholder="Enter passcode to unlock..."
+                className="w-full rounded-md border border-border bg-bg-subtle pl-9 pr-3 py-2.5 text-sm text-fg placeholder:text-fg-subtle focus:border-accent focus:bg-surface focus:outline-none"
+              />
+              <Key className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-fg-subtle" />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            disabled={unlocking}
+            className="inline-flex h-10 items-center gap-2 rounded-md bg-accent px-5 text-xs font-semibold text-accent-fg shadow-sm hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-accent disabled:opacity-50 transition-all"
+          >
+            <Lock className="h-3.5 w-3.5" />
+            <span>{unlocking ? "Verifying..." : "Unlock Intake Form"}</span>
+          </button>
+        </form>
+      </div>
+    );
+  }
 
   return (
     <div id="intake-form" className="rounded-2xl border border-border bg-surface p-6 sm:p-10 shadow-sm space-y-8">

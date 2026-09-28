@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { clsx } from "clsx";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { CommandMenu } from "@/components/ui/CommandMenu";
+import { AuthStatusButton } from "@/components/auth/AuthStatusButton";
 import { Menu, X } from "lucide-react";
 
 export function Header() {
@@ -68,9 +69,10 @@ export function Header() {
           })}
         </nav>
 
-        {/* Right Actions: Search + Theme Toggle + Mobile Menu Trigger */}
+        {/* Right Actions: Search + Auth + Theme Toggle + Mobile Menu Trigger */}
         <div className="flex items-center gap-2">
           <CommandMenu />
+          <AuthStatusButton />
           <ThemeToggle />
 
           {/* Mobile Menu Button */}
