@@ -24,16 +24,16 @@ export function RaciTable() {
 
   const getRoleBadge = (role: RACIRole) => {
     switch (role) {
-      case "A":
-        return (
-          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-accent font-mono text-xs font-bold text-accent-fg shadow-xs">
-            A
-          </span>
-        );
       case "R":
         return (
-          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-success/20 font-mono text-xs font-bold text-success border border-success/30">
+          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-accent font-mono text-xs font-bold text-accent-fg shadow-xs">
             R
+          </span>
+        );
+      case "A":
+        return (
+          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-accent/15 font-mono text-xs font-bold text-accent border border-accent/30">
+            A
           </span>
         );
       case "C":
@@ -65,22 +65,22 @@ export function RaciTable() {
           </p>
         </div>
 
-        {/* Legend */}
+        {/* Legend in R-A-C-I Order with R as Highlight */}
         <div className="flex items-center gap-3 text-xs">
-          <div className="flex items-center gap-1">
-            <span className="h-4 w-4 rounded-full bg-accent text-accent-fg font-mono text-[10px] font-bold flex items-center justify-center">A</span>
+          <div className="flex items-center gap-1.5">
+            <span className="h-4 w-4 rounded-full bg-accent text-accent-fg font-mono text-[10px] font-bold flex items-center justify-center shadow-xs">R</span>
+            <span className="text-fg font-medium">Responsible</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <span className="h-4 w-4 rounded-full bg-accent/15 text-accent border border-accent/30 font-mono text-[10px] font-bold flex items-center justify-center">A</span>
             <span className="text-fg-subtle">Accountable</span>
           </div>
-          <div className="flex items-center gap-1">
-            <span className="h-4 w-4 rounded-full bg-success/20 text-success font-mono text-[10px] font-bold flex items-center justify-center">R</span>
-            <span className="text-fg-subtle">Responsible</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <span className="h-4 w-4 rounded-full bg-warning/20 text-warning font-mono text-[10px] font-bold flex items-center justify-center">C</span>
+          <div className="flex items-center gap-1.5">
+            <span className="h-4 w-4 rounded-full bg-warning/20 text-warning border border-warning/40 font-mono text-[10px] font-bold flex items-center justify-center">C</span>
             <span className="text-fg-subtle">Consulted</span>
           </div>
-          <div className="flex items-center gap-1">
-            <span className="h-4 w-4 rounded-full bg-bg-muted text-fg-subtle font-mono text-[10px] font-bold flex items-center justify-center">I</span>
+          <div className="flex items-center gap-1.5">
+            <span className="h-4 w-4 rounded-full bg-bg-muted text-fg-subtle border border-border font-mono text-[10px] font-bold flex items-center justify-center">I</span>
             <span className="text-fg-subtle">Informed</span>
           </div>
         </div>
