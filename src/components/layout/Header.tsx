@@ -135,7 +135,7 @@ export function Header() {
           {/* Bottom section after divider: Theme toggle then Log In / Log Out */}
           <div className="mt-3 pt-3 border-t border-border flex flex-col gap-1.5">
             {/* Theme row */}
-            <div className="flex items-center justify-between px-3 py-2 text-sm font-medium text-fg">
+            <div className="flex items-center justify-between px-3 py-2 text-sm font-medium text-fg-muted">
               <span>Theme</span>
               <ThemeSegmentedToggle />
             </div>
