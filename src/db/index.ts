@@ -4,7 +4,9 @@ import * as schema from "./schema";
 import fs from "fs";
 import path from "path";
 
-const dataDir = path.resolve(process.cwd(), "data");
+const isVercel = process.env.VERCEL === "1" || !!process.env.AWS_LAMBDA_FUNCTION_NAME;
+const dataDir = isVercel ? "/tmp" : path.resolve(process.cwd(), "data");
+
 if (!fs.existsSync(dataDir)) {
   fs.mkdirSync(dataDir, { recursive: true });
 }
