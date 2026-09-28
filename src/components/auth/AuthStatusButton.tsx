@@ -28,21 +28,15 @@ export function AuthStatusButton() {
 
   if (authenticated) {
     return (
-      <div className="flex items-center gap-1.5">
-        <span className="inline-flex items-center gap-1 rounded-full border border-success/30 bg-success/10 px-2.5 py-1 text-xs font-medium text-success">
-          <span className="h-1.5 w-1.5 rounded-full bg-success shrink-0" />
-          Logged In
-        </span>
-        <button
-          type="button"
-          onClick={handleLogout}
-          title="Sign out"
-          className="inline-flex h-8 items-center gap-1 rounded-md border border-border bg-bg-subtle px-2.5 text-xs font-medium text-fg-muted hover:bg-bg-muted hover:text-fg transition-colors"
-        >
-          <LogOut className="h-3 w-3" />
-          <span>Log Out</span>
-        </button>
-      </div>
+      <button
+        type="button"
+        onClick={handleLogout}
+        title="Sign out of MPO Portal"
+        className="inline-flex h-8 items-center gap-1.5 rounded-md border border-border bg-bg-subtle px-3 text-xs font-semibold text-fg-muted hover:border-danger hover:bg-danger/10 hover:text-danger transition-colors"
+      >
+        <LogOut className="h-3.5 w-3.5" />
+        <span>Log Out</span>
+      </button>
     );
   }
 

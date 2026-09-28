@@ -4,14 +4,32 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { clsx } from "clsx";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { ThemeToggle, ThemeSegmentedToggle } from "@/components/ui/ThemeToggle";
 import { CommandMenu } from "@/components/ui/CommandMenu";
 import { AuthStatusButton } from "@/components/auth/AuthStatusButton";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Lock, LogOut } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [authenticated, setAuthenticated] = useState<boolean | null>(null);
   const pathname = usePathname();
+  const router = useRouter();
+
+  useEffect(() => {
+    fetch("/api/auth/status")
+      .then((res) => res.json())
+      .then((data) => setAuthenticated(data.authenticated))
+      .catch(() => setAuthenticated(false));
+  }, [pathname, mobileOpen]);
+
+  const handleLogout = async () => {
+    await fetch("/api/auth/logout", { method: "POST" });
+    setAuthenticated(false);
+    setMobileOpen(false);
+    router.refresh();
+  };
 
   const navLinks = [
     { name: "Vision & Doctrine", href: "/vision-doctrine" },
@@ -116,10 +134,34 @@ export function Header() {
             })}
           </nav>
 
-          {/* Bottom of the Main Menu: Login Button & Theme Switch together */}
-          <div className="mt-4 pt-4 border-t border-border flex items-center gap-3 justify-start">
-            <AuthStatusButton />
-            <ThemeToggle />
+          {/* Bottom section after divider: Theme toggle then Log In / Log Out */}
+          <div className="mt-3 pt-3 border-t border-border flex flex-col gap-1.5">
+            {/* Theme row */}
+            <div className="flex items-center justify-between px-3 py-2 text-sm font-medium text-fg">
+              <span>Theme</span>
+              <ThemeSegmentedToggle />
+            </div>
+
+            {/* Auth row: Log In / Log Out */}
+            {authenticated ? (
+              <button
+                type="button"
+                onClick={handleLogout}
+                className="flex w-full items-center justify-between rounded-md px-3 py-2 text-sm font-medium text-fg-muted hover:bg-danger/10 hover:text-danger transition-colors text-left"
+              >
+                <span>Log Out</span>
+                <LogOut className="h-4 w-4" />
+              </button>
+            ) : (
+              <Link
+                href="/login"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium text-fg-muted hover:bg-bg-subtle hover:text-fg transition-colors"
+              >
+                <span>Log In</span>
+                <Lock className="h-4 w-4" />
+              </Link>
+            )}
           </div>
         </div>
       )}
