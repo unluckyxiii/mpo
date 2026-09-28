@@ -21,7 +21,7 @@ export default function VisionDoctrinePage() {
               Transformation Doctrine
             </PrizmBadge>
             <PrizmBadge variant="muted">
-              Whole-of-Defence Mandate
+              Functional Authority for Product Practice
             </PrizmBadge>
           </div>
 

@@ -47,7 +47,7 @@ export function HeroSection() {
               MINDEF Transformation Task Force
             </PrizmBadge>
             <PrizmBadge variant="muted">
-              Whole-of-Defence Mandate
+              Functional Authority for Product Practice
             </PrizmBadge>
             <PrizmBadge variant="success">
               AI-First Operating Model
