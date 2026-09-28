@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import { Search, BookOpen, Layers, Users, HelpCircle, ArrowRight, X } from "lucide-react";
 import { glossaryDictionary } from "@/data/glossary-data";
@@ -17,7 +18,22 @@ interface SearchResult {
 export function CommandMenu() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
+  const [mounted, setMounted] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = "";
+      };
+    }
+  }, [open]);
 
   // Keyboard shortcut ⌘K / Ctrl+K
   useEffect(() => {
@@ -161,10 +177,18 @@ export function CommandMenu() {
         <Search className="h-4 w-4" />
       </button>
 
-      {/* Modal Dialog */}
-      {open && (
-        <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/60 p-4 pt-20 backdrop-blur-sm sm:p-6 sm:pt-24">
-          <div className="relative w-full max-w-2xl rounded-xl border border-border bg-surface shadow-2xl overflow-hidden ring-1 ring-black/10 animate-in fade-in zoom-in-95 duration-150">
+      {/* Modal Dialog Portal */}
+      {mounted && open && createPortal(
+        <div
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setOpen(false)}
+          className="fixed inset-0 z-[100] flex items-start justify-center bg-black/60 p-4 pt-16 backdrop-blur-sm sm:p-6 sm:pt-24 animate-in fade-in duration-150"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-2xl rounded-xl border border-border bg-surface shadow-2xl overflow-hidden ring-1 ring-black/10 animate-in zoom-in-95 duration-150"
+          >
             <div className="flex items-center border-b border-border px-4 py-3">
               <Search className="h-5 w-5 text-fg-subtle shrink-0" />
               <input
@@ -256,7 +280,8 @@ export function CommandMenu() {
               <span>Use <kbd className="font-mono bg-surface border border-border px-1 rounded">↑</kbd> <kbd className="font-mono bg-surface border border-border px-1 rounded">↓</kbd> to navigate</span>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
