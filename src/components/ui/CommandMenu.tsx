@@ -158,7 +158,7 @@ export function CommandMenu() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="hidden h-9 items-center gap-2 rounded-md border border-border bg-bg-subtle px-3 text-sm text-fg-subtle transition-colors hover:border-border-strong hover:bg-bg-muted hover:text-fg-muted md:inline-flex"
+        className="hidden h-9 items-center gap-2 rounded-md border border-border bg-bg-subtle px-3 text-sm text-fg-subtle transition-colors hover:border-border-strong hover:bg-bg-muted hover:text-fg-muted xl:inline-flex"
       >
         <Search className="h-3.5 w-3.5" />
         <span>Search portal...</span>
@@ -167,12 +167,12 @@ export function CommandMenu() {
         </kbd>
       </button>
 
-      {/* Mobile Search Button */}
+      {/* Compact / Mobile Search Button */}
       <button
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Search"
-        className="inline-flex h-9 w-9 items-center justify-center rounded-md text-fg-muted transition-colors hover:bg-bg-muted hover:text-fg md:hidden"
+        className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-bg-subtle text-fg-muted transition-colors hover:border-border-strong hover:bg-bg-muted hover:text-fg xl:hidden"
       >
         <Search className="h-4 w-4" />
       </button>
