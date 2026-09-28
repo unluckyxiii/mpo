@@ -1,15 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { clsx } from "clsx";
 import { ThemeToggle, ThemeSegmentedToggle } from "@/components/ui/ThemeToggle";
 import { CommandMenu } from "@/components/ui/CommandMenu";
 import { AuthStatusButton } from "@/components/auth/AuthStatusButton";
 import { Menu, X, Lock, LogOut } from "lucide-react";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
