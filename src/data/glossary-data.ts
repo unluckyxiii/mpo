@@ -97,6 +97,14 @@ export const glossaryDictionary: GlossaryItem[] = [
     category: "organization",
     relatedTerms: ["MPO", "PS(D)"]
   },
+  {
+    id: "sdd",
+    term: "SDD",
+    fullName: "Service Delivery Division",
+    definition: "The MINDEF division driving service delivery transformation, citizen/serviceman journeys, and seamless digital service touchpoints across MINDEF/SAF.",
+    category: "organization",
+    relatedTerms: ["MPO", "OneNS", "MINDEF"]
+  },
 
   // Frameworks & Delivery Methodologies
   {
