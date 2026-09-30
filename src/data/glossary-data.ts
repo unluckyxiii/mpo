@@ -85,9 +85,25 @@ export const glossaryDictionary: GlossaryItem[] = [
     id: "coa",
     term: "COA",
     fullName: "Chief of Army",
-    definition: "Head of the Singapore Army, providing operational direction for land capability programs.",
+    definition: "Head of the Singapore Army, providing operational direction for land capability programs and digital soldier systems.",
     category: "organization",
-    relatedTerms: ["SAF"]
+    relatedTerms: ["SAF", "CNV", "CAF"]
+  },
+  {
+    id: "cnv",
+    term: "CNV",
+    fullName: "Chief of Navy",
+    definition: "Head of the Republic of Singapore Navy (RSN), providing operational direction for maritime capability and digital naval systems.",
+    category: "organization",
+    relatedTerms: ["SAF", "COA", "CAF"]
+  },
+  {
+    id: "caf",
+    term: "CAF",
+    fullName: "Chief of Air Force",
+    definition: "Head of the Republic of Singapore Air Force (RSAF), providing operational direction for air defence and digital air power capability programs.",
+    category: "organization",
+    relatedTerms: ["SAF", "COA", "CNV", "RAiD"]
   },
   {
     id: "dmp",
