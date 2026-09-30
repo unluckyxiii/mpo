@@ -222,12 +222,20 @@ export const glossaryDictionary: GlossaryItem[] = [
     relatedTerms: ["GCC", "TechPass"]
   },
   {
+    id: "mcc",
+    term: "MCC",
+    fullName: "MINDEF Commercial Cloud",
+    definition: "The dedicated, secure multi-cloud hosting and DevSecOps platform built on commercial hyperscalers for MINDEF/SAF and the Defence Technology Community, engineered with defence security guardrails for rapid software deployment.",
+    category: "platform",
+    relatedTerms: ["GCC", "ACE / Foundry", "TechPass", "DSTA"]
+  },
+  {
     id: "gcc",
     term: "GCC",
     fullName: "Government Commercial Cloud",
     definition: "The secure commercial cloud infrastructure platform (AWS/Azure/GCP) configured for Whole-of-Government and defence security requirements.",
     category: "platform",
-    relatedTerms: ["TechPass", "ACE / Foundry"]
+    relatedTerms: ["MCC", "TechPass", "ACE / Foundry"]
   },
   {
     id: "techpass",
