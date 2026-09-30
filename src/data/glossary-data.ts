@@ -285,7 +285,15 @@ export const glossaryDictionary: GlossaryItem[] = [
     fullName: "Unit Operating Expenses",
     definition: "The operational funding vote in MINDEF required to meet office administrative and operating overheads, distinct from an initiation budget used to fund direct product development and implementation.",
     category: "governance",
-    relatedTerms: ["Operating Vote", "DFO", "MPO"]
+    relatedTerms: ["UWE", "Operating Vote", "DFO", "MPO"]
+  },
+  {
+    id: "uwe",
+    term: "UWE",
+    fullName: "Unit Welfare Expenses",
+    definition: "The dedicated funding vote allocated within MINDEF/SAF units to support personnel welfare, team cohesion, morale initiatives, and staff well-being.",
+    category: "governance",
+    relatedTerms: ["UOE", "DFO"]
   },
   {
     id: "rts",
