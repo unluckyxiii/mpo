@@ -269,24 +269,24 @@ export const glossaryDictionary: GlossaryItem[] = [
     category: "platform",
     relatedTerms: ["GCC", "ACE / Foundry"]
   },
+
+  // Governance & Establishment
+  {
+    id: "aor",
+    term: "AOR",
+    fullName: "Approval of Request",
+    definition: "The formal administrative and governance endorsement required to authorize project initiation, resource allocations, or policy variations across MINDEF/SAF.",
+    category: "governance",
+    relatedTerms: ["TOR", "Operating Vote", "MPO"]
+  },
   {
     id: "uoe",
     term: "UOE",
-    fullName: "Unclassified Operating Environment",
-    definition: "The secure, non-classified digital hosting and runtime environment in MINDEF/SAF for enterprise applications, public-facing portals, and administrative workflows separated from tactical command networks.",
-    category: "platform",
-    relatedTerms: ["UWE", "MCC", "GCC"]
+    fullName: "Unit Operating Expenses",
+    definition: "The operational funding vote in MINDEF required to meet office administrative and operating overheads, distinct from an initiation budget used to fund direct product development and implementation.",
+    category: "governance",
+    relatedTerms: ["Operating Vote", "DFO", "MPO"]
   },
-  {
-    id: "uwe",
-    term: "UWE",
-    fullName: "Unclassified Workplace Environment",
-    definition: "The digital workplace and end-user computing ecosystem (devices, productivity tools, and connectivity) deployed across MINDEF/SAF for day-to-day unclassified work.",
-    category: "platform",
-    relatedTerms: ["UOE", "MCC", "TechPass"]
-  },
-
-  // Governance & Establishment
   {
     id: "rts",
     term: "RTS",
