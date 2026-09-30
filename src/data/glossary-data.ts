@@ -106,6 +106,14 @@ export const glossaryDictionary: GlossaryItem[] = [
     relatedTerms: ["SAF", "COA", "CNV", "RAiD"]
   },
   {
+    id: "dfo",
+    term: "DFO",
+    fullName: "Defence Finance Organisation",
+    definition: "The central finance organisation in MINDEF responsible for financial policy, budget allocation, resource management, and governance of capability development votes.",
+    category: "organization",
+    relatedTerms: ["MPO", "PS(D)", "Capital Vote", "Operating Vote"]
+  },
+  {
     id: "dmp",
     term: "DMP",
     fullName: "Directorate of Military Policy / Defence Management Policy",
@@ -260,6 +268,22 @@ export const glossaryDictionary: GlossaryItem[] = [
     definition: "Secure single sign-on and identity management standard used to authenticate government officers, contractors, and developers across cloud development environments.",
     category: "platform",
     relatedTerms: ["GCC", "ACE / Foundry"]
+  },
+  {
+    id: "uoe",
+    term: "UOE",
+    fullName: "Unclassified Operating Environment",
+    definition: "The secure, non-classified digital hosting and runtime environment in MINDEF/SAF for enterprise applications, public-facing portals, and administrative workflows separated from tactical command networks.",
+    category: "platform",
+    relatedTerms: ["UWE", "MCC", "GCC"]
+  },
+  {
+    id: "uwe",
+    term: "UWE",
+    fullName: "Unclassified Workplace Environment",
+    definition: "The digital workplace and end-user computing ecosystem (devices, productivity tools, and connectivity) deployed across MINDEF/SAF for day-to-day unclassified work.",
+    category: "platform",
+    relatedTerms: ["UOE", "MCC", "TechPass"]
   },
 
   // Governance & Establishment
