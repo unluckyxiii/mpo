@@ -13,6 +13,7 @@ export function GlossaryDirectory() {
 
   const [searchQuery, setSearchQuery] = useState(initialSearch);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [selectedLetter, setSelectedLetter] = useState<string>("all");
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
   useEffect(() => {
@@ -30,19 +31,51 @@ export function GlossaryDirectory() {
     { id: "military", name: "Defence & Military Terms" },
   ];
 
-  const filteredTerms = useMemo(() => {
-    return glossaryDictionary.filter((item) => {
-      const matchesCat =
-        selectedCategory === "all" || item.category === selectedCategory;
-      const q = searchQuery.toLowerCase().trim();
-      const matchesQuery =
-        !q ||
-        item.term.toLowerCase().includes(q) ||
-        item.fullName.toLowerCase().includes(q) ||
-        item.definition.toLowerCase().includes(q);
-      return matchesCat && matchesQuery;
+  // Alphabet letter list derived from glossary dictionary
+  const alphabet = useMemo(() => {
+    const letters = new Set<string>();
+    glossaryDictionary.forEach((item) => {
+      const firstChar = item.term[0].toUpperCase();
+      if (/\d/.test(firstChar)) {
+        letters.add("#");
+      } else {
+        letters.add(firstChar);
+      }
     });
-  }, [searchQuery, selectedCategory]);
+    return [
+      "all",
+      ...Array.from(letters).sort((a, b) => {
+        if (a === "#") return -1;
+        if (b === "#") return 1;
+        return a.localeCompare(b);
+      }),
+    ];
+  }, []);
+
+  // Filter and Default Alphabetical Sort (A-Z)
+  const filteredTerms = useMemo(() => {
+    return glossaryDictionary
+      .filter((item) => {
+        const matchesCat =
+          selectedCategory === "all" || item.category === selectedCategory;
+        const q = searchQuery.toLowerCase().trim();
+        const matchesQuery =
+          !q ||
+          item.term.toLowerCase().includes(q) ||
+          item.fullName.toLowerCase().includes(q) ||
+          item.definition.toLowerCase().includes(q);
+
+        const firstChar = item.term[0].toUpperCase();
+        const matchesLetter =
+          selectedLetter === "all" ||
+          (selectedLetter === "#" ? /\d/.test(firstChar) : firstChar === selectedLetter);
+
+        return matchesCat && matchesQuery && matchesLetter;
+      })
+      .sort((a, b) =>
+        a.term.localeCompare(b.term, undefined, { numeric: true, sensitivity: "base" })
+      );
+  }, [searchQuery, selectedCategory, selectedLetter]);
 
   const copyToClipboard = (item: GlossaryItem) => {
     const text = `${item.term} (${item.fullName}): ${item.definition}`;
@@ -50,11 +83,6 @@ export function GlossaryDirectory() {
     setCopiedId(item.id);
     setTimeout(() => setCopiedId(null), 2000);
   };
-
-  // Unique starting letters for A-Z bar
-  const alphabet = Array.from(
-    new Set(glossaryDictionary.map((i) => i.term[0].toUpperCase()))
-  ).sort();
 
   return (
     <div className="space-y-8">
@@ -67,7 +95,12 @@ export function GlossaryDirectory() {
             <input
               type="text"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                if (e.target.value && selectedLetter !== "all") {
+                  setSelectedLetter("all");
+                }
+              }}
               placeholder="Search by acronym (e.g. PSD, GCC, VCR, RTS) or keyword..."
               className="w-full rounded-lg border border-border bg-bg-subtle pl-10 pr-10 py-2.5 text-sm text-fg placeholder:text-fg-subtle focus:border-accent focus:bg-surface focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
             />
@@ -107,6 +140,25 @@ export function GlossaryDirectory() {
               )}
             >
               {cat.name}
+            </button>
+          ))}
+        </div>
+
+        {/* A-Z Alphabet Quick Filter */}
+        <div className="flex flex-wrap items-center gap-1 pt-2 border-t border-border/60">
+          <span className="text-xs font-semibold text-fg-subtle mr-2">A–Z:</span>
+          {alphabet.map((letter) => (
+            <button
+              key={letter}
+              onClick={() => setSelectedLetter(letter)}
+              className={clsx(
+                "h-6 min-w-6 px-1.5 rounded text-[11px] font-mono font-medium transition-colors uppercase",
+                selectedLetter === letter
+                  ? "bg-accent text-accent-fg font-bold"
+                  : "border border-border/60 bg-bg-subtle text-fg-muted hover:bg-bg-muted hover:text-fg"
+              )}
+            >
+              {letter === "all" ? "All" : letter}
             </button>
           ))}
         </div>
@@ -181,6 +233,7 @@ export function GlossaryDirectory() {
             onClick={() => {
               setSearchQuery("");
               setSelectedCategory("all");
+              setSelectedLetter("all");
             }}
             className="text-xs font-semibold text-accent hover:underline"
           >
