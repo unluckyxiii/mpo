@@ -96,7 +96,7 @@ export default function StructureAccountabilityPage() {
         <RaciTable />
       </section>
 
-      {/* Appraise & Outcome Framework */}
+      {/* Outcome & Value Evaluation Framework */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 border-t border-border">
         <div className="rounded-2xl border border-border bg-surface p-6 sm:p-10 shadow-xs space-y-6">
           <div className="space-y-2">
@@ -104,10 +104,10 @@ export default function StructureAccountabilityPage() {
               Evaluation & Outcome Metrics
             </PrizmBadge>
             <h3 className="text-2xl font-bold text-fg">
-              The Appraise Framework: Measuring Value over Output
+              Outcome & Value Evaluation: Measuring Value over Output
             </h3>
             <p className="text-xs sm:text-sm text-fg-muted max-w-3xl leading-relaxed">
-              Traditional governance evaluates squads on conformity to an upfront plan. The MPO Appraise framework measures squads and domain owners on validated ground problem resolution, adoption velocity, and <TooltipAcronym term="VCR">Value-Cost Ratio</TooltipAcronym>.
+              Traditional governance evaluates squads on conformity to an upfront plan. MPO evaluates squads and domain owners on validated ground problem resolution, adoption velocity, and <TooltipAcronym term="VCR">Value-Cost Ratio</TooltipAcronym>.
             </p>
           </div>
 

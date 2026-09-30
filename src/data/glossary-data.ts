@@ -158,10 +158,10 @@ export const glossaryDictionary: GlossaryItem[] = [
   {
     id: "appraise",
     term: "Appraise",
-    fullName: "MPO Performance & Outcome Appraisal Framework",
-    definition: "The evaluation framework that measures squads and domain owners based on validated user adoption and operational problem resolution rather than plan conformity.",
-    category: "framework",
-    relatedTerms: ["VCR", "DASH", "PULSE"]
+    fullName: "Appraise — 360° Performance Evaluation Platform (GovTech)",
+    definition: "The Whole-of-Government performance review and career framework platform built by GovTech CIOO Labs (appraise.tech.gov.sg), bringing multi-perspective 360° feedback, schema-based self-evaluations, manager assessments, and promotion calibration into a single unified cycle across public service agencies.",
+    category: "platform",
+    relatedTerms: ["RTS", "TechPass", "GovTech"]
   },
   {
     id: "pulse",
